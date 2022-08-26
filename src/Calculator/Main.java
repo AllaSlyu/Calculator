@@ -32,24 +32,24 @@ public class Main {
             throw new AllExceptions("throws Exception //т.к. строка не является математической операцией");
         }
 
-        if (arabic.contains(firstNumber) && roman.contains(secondNumber) && flag == 1  || roman.contains(firstNumber) && arabic.contains(secondNumber) && flag == 1 ) {
+        if (arabic.contains(firstNumber) && roman.contains(secondNumber)   || roman.contains(firstNumber) && arabic.contains(secondNumber)) {
             throw new AllExceptions("throws Exception //т.к. используются одновременно разные системы счисления");
         }
 
-        if (arabic.contains(firstNumber) && arabic.contains(secondNumber) && flag == 1 ) {
+        if (arabic.contains(firstNumber) && arabic.contains(secondNumber) ) {
             Arabic arabic1 = new Arabic(firstNumber, znak, secondNumber);
             arabic1.konechnii_itog();
             if (Arabic.d == 0) {
-                return "throws exception, число должно быть от 1 до 10";
+                return "throws Exception //т.к. число должно быть от 1 до 10";
             } else {
                 return "" + arabic1.itog();
             }
 
-        } else if (roman.contains(firstNumber) && roman.contains(secondNumber) && flag == 1) {
+        } else if (roman.contains(firstNumber) && roman.contains(secondNumber)) {
             Roman roman1 = new Roman(firstNumber, znak, secondNumber);
             roman1.predrewenie();
             if (Roman.z == 0) {
-                return "5throws exception, число должно быть от 1 до 10";
+                return "throws Exception //т.к. число должно быть от 1 до 10";
             } else {
                 int f = roman1.rewenie();
                 if (f >= 1) {
@@ -61,7 +61,7 @@ public class Main {
             }
 
         }
-        return "7throws exception, число дожно быть от 1 до 10";
+        return "throws Exception //т.к. число должно быть от 1 до 10";
 
 
     }
