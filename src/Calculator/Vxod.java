@@ -2,7 +2,7 @@ package Calculator;
 
 import java.util.Scanner;
 
-public  class Vxod {
+class Vxod {
     public static void main(String[] args)  {
         Scanner in = new Scanner(System.in);//для получения ввода с консоли в классе System определен объект in. Класс Scanner использует System.in
         System.out.print("vvedite primer:");
