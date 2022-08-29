@@ -8,96 +8,97 @@ class Roman {
     }
     String a, b;
     String znak;
-    String c;
-    String g = "";
-    public static byte z = 0;
-    String preobrazovanie1(String a1) {
+    String izRomVArab;
+    String rezultatDeistvii2 = "";
+    static byte flagUslovija2 = 0;
+    String preobrazovanieIzRomVArab(String a1) {
         switch (a1) {
             case "I":
-                c = "1";
+                izRomVArab = "1";
                 break;
             case "II":
-                c = "2";
+                izRomVArab = "2";
                 break;
             case "III":
-                c = "3";
+                izRomVArab = "3";
                 break;
             case "IV":
-                c = "4";
+                izRomVArab = "4";
                 break;
             case "V":
-                c = "5";
+                izRomVArab = "5";
                 break;
             case "VI":
-                c = "6";
+                izRomVArab = "6";
                 break;
             case "VII":
-                c = "7";
+                izRomVArab = "7";
                 break;
             case "VIII":
-                c = "8";
+                izRomVArab = "8";
                 break;
             case "IX":
-                c = "9";
+                izRomVArab = "9";
                 break;
             case "X":
-                c = "10";
+                izRomVArab = "10";
                 break;
         }
-        return c;
+        return izRomVArab;
 
     }
 
     byte predrewenie() {
-        String q = preobrazovanie1(a);
-        String e = preobrazovanie1(b);
+        String q = preobrazovanieIzRomVArab(a);
+        String e = preobrazovanieIzRomVArab(b);
         if (Byte.valueOf(q)<0|| Byte.valueOf(q)>10|| Byte.valueOf(e)<0|| Byte.valueOf(e)>10){
-            z=0;}
-        else{z=1;
+            flagUslovija2 =0;}
+        else{
+            flagUslovija2 =1;
             }
-        return z;
+        return flagUslovija2;
     }
     int rewenie() {
-            Arabic arabic2 = new Arabic(preobrazovanie1(a), znak, preobrazovanie1(b));
-            int f1 = arabic2.itog();
+            Arabic arabic2 = new Arabic(preobrazovanieIzRomVArab(a), znak, preobrazovanieIzRomVArab(b));
+            int f1 = arabic2.itogMatDeistvii();
             return f1;
         }
 
 
 
-    String preobrazovanie2( int f){
+    String preobrazovanieIzArabVRom(int f){
 
     while (f==100){
-        g +="C";
+        rezultatDeistvii2 +="C";
         f -=100;}
     while (f>=90){
-        g +="XC";
+        rezultatDeistvii2 +="XC";
         f -=90;}
     while (f>=50){
-        g +="L";
+        rezultatDeistvii2 +="L";
         f -=50;}
     while (f>=40){
-        g +="XL";
+        rezultatDeistvii2 +="XL";
         f -=40;}
     while (f>=10){
-        g +="X";
+        rezultatDeistvii2 +="X";
         f -=10;}
     while (f>=9){
-        g +="IX";
+        rezultatDeistvii2 +="IX";
         f -=9;}
     while (f >= 5) {
-        g += "V";
+        rezultatDeistvii2 += "V";
         f -= 5;
         }
     while (f >= 4) {
-        g += "IV";
+        rezultatDeistvii2 += "IV";
         f -= 4;
         }
     while (f >= 1) {
-        g += "I";
+        rezultatDeistvii2 += "I";
         f -= 1;
         }
-    return g;
+    return rezultatDeistvii2;
 }
 }
 
